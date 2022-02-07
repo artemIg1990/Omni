@@ -1,8 +1,8 @@
 
 
 
-def test_run():
-    created_orders = {}
-    params = {}
+a = config.order_status_reserved
+
+print(a)
 
 

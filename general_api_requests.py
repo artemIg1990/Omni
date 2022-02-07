@@ -23,6 +23,7 @@ def delete_order(eni):
     body_json = json.dumps(request_body, skipkeys=True, separators=None)
     return {"header": headers, "body": body_json, "url": url_request, "method": "DELETE"}
 
+
 def check_cells_status(eni):
     headers = {
         "Authorization": config.dev_token,
@@ -87,6 +88,7 @@ def create_order(eni):
     url_request = f"{config.DHurl}{config.apiVersion}order/"
     return {"header": headers, "body": body_json, "url": url_request, "method": "POST"}
 
+
 def barcode_read(eni):
     headers = {
         "Authorization": config.dev_token,
@@ -100,7 +102,7 @@ def barcode_read(eni):
     request_body = {
         "device_id": eni.get("device_id"),
         "order_number": eni.get("order_number"),
-        "barcode": barcode
+        "barcode": barcode,
     }
     body_json = json.dumps(request_body)
     url_request = f"{config.DHurl}{config.apiVersion}order/barcode/"

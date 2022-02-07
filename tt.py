@@ -84,10 +84,11 @@ def interact_element(driver, element, text="", is_checked = True):
 
 cancel_order_manual({"uid": "17f7d9b6-b77b-41d6-9645-025af67cef76", "order_number": "[CDK]1307784852"})
 
-"""
-di = {"24709":"4a444827-35a1-4c68-83a8-faf5c6cc1c32", "24710": "d43c40ed-f6f7-496c-84f6-f3b0c73de771", "24711": "568c5cbe-3230-40ee-8c99-5962bbb57822"}
+
+di = {"24709": "4a444827-35a1-4c68-83a8-faf5c6cc1c32", "24710": "d43c40ed-f6f7-496c-84f6-f3b0c73de771",
+      "24711": "568c5cbe-3230-40ee-8c99-5962bbb57822"}
 
 for i in di.keys():
     cancel_order_manual({"uid": di.get(i), "order_number": i})
     print(di.get(i), i)
-"""
+

@@ -4,14 +4,18 @@ import general_api_requests
 import PyQt5
 
 created_orders = {}
-params = {"price": 0, "status": 0, "client_order": False}
+#params = {"price": 0, "status": 0, "client_order": False}
 
 
 def create_order(params: dict):
-    envi = common_functions.prepare_envi()
+    envi = common_functions.prepare_envi(params)
     new_order = common_functions.run_request(general_api_requests.create_order(envi), True)
     if new_order["code"] == 201:
         created_orders.update(new_order.get())
+        return new_order["body"]
+    else:
+        print(f"ERROR: Code: {new_order['code']}, Message: {new_order['body'].get('message')}")
+
 
 """
 def test_create_order_pay():
@@ -35,5 +39,6 @@ def test_create_order_pay():
         print(err)
     finally:
         print("done")
+         
 """
 
